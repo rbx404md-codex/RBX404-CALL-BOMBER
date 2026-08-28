@@ -1,10 +1,2 @@
 python-telegram-bot==20.7
 requests==2.31.0
-sqlite3
-asyncio
-concurrent.futures
-datetime
-json
-os
-time
-randomrandom
