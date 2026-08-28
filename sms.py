@@ -1590,6 +1590,6 @@ class SMSBomberBot:
 # ====================== মেইন ======================
 
 if __name__ == "__main__":
-    BOT_TOKEN = "8218480747:AAGzuqYB2GG24rEnqAS7M4tppYDTlKDAqRc"
+    BOT_TOKEN = "8218480747:AAEhdGCthvhMaGLKvpaBtHwo0o40WYKoLHA"
     bot = SMSBomberBot(BOT_TOKEN)
     bot.run()
