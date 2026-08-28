@@ -1280,7 +1280,7 @@ class SMSBomberBot:
             await query.edit_message_text(
                 "🔒 **অ্যাক্সেস প্রয়োজন**\n\n"
                 "নিচের চ্যানেলগুলোতে যোগদান করুন:\n\n"
-                f"{chr(10).join([f'📢 {ch[\"channel_name\"]}' for ch in not_joined])}\n\n"
+				 f"{chr(10).join([f"📢 {ch['channel_name']}" for ch in not_joined])}\n\n"
                 "যোগদানের পর '🔄 আবার চেক করুন' বাটনে ক্লিক করুন।",
                 reply_markup=self.get_join_keyboard(not_joined)
             )
@@ -2226,13 +2226,17 @@ class SMSBomberBot:
 
 if __name__ == "__main__":
     BOT_TOKEN = "8218480747:AAEhdGCthvhMaGLKvpaBtHwo0o40WYKoLHA"
-    
-    # SSL ওয়ার্নিং বন্ধ করুন
+
+    import asyncio
     import urllib3
+
     urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-    
+
+    # Python 3.13-এর জন্য event loop তৈরি করা
+    asyncio.set_event_loop(asyncio.new_event_loop())
+
     bot = SMSBomberBot(BOT_TOKEN)
-    
+
     try:
         bot.run()
     except KeyboardInterrupt:
